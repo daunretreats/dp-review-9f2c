@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dentalpro — A centre of excellence in restorative and aesthetic dentistry, Kuala Lumpur</title>
+<style>
+@font-face{font-family:'Newsreader';src:url('assets/fonts/newsreader-normal.woff2') format('woff2');font-weight:300 800;font-display:swap}
+@font-face{font-family:'Newsreader';src:url('assets/fonts/newsreader-italic.woff2') format('woff2');font-style:italic;font-weight:300 800;font-display:swap}
+@font-face{font-family:'Karla';src:url('assets/fonts/karla-normal.woff2') format('woff2');font-weight:300 700;font-display:swap}
+:root{--ink:#0E1B26;--navy:#12345B;--deep:#0B2338;--cream:#F7F3EC;--cream2:#EFE8DC;--soft:#465663;--muted:#6B7A85;--line:rgba(14,27,38,.12);--serif:'Newsreader',Georgia,serif;--sans:'Karla',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1140px,100% - 40px);margin:0 auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;margin:0}
+h1{font-size:clamp(30px,4.4vw,50px);line-height:1.08;letter-spacing:-.015em}
+h2{font-size:clamp(23px,3.1vw,34px);line-height:1.15}
+p{margin:0}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 24px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.02em}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-line{border:1px solid var(--line)}
+.btn-cream{background:var(--cream);color:var(--ink)}
+
+.hdr{position:sticky;top:0;z-index:40;background:rgba(247,243,236,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
+.hdr img{height:34px}
+.hdr nav{display:flex;gap:24px;font-size:13.5px;color:var(--soft)}
+.hdr .tel{font-size:13.5px;color:var(--navy);font-weight:700}
+@media(max-width:980px){.hdr nav{display:none}}
+
+.hero{padding:52px 0 40px}
+.hero .grid{display:grid;grid-template-columns:1.06fr .94fr;gap:48px;align-items:center}
+.hero h1{margin-top:16px;max-width:20ch}
+.hero .lede{margin-top:18px;font-size:17px;color:var(--soft);max-width:54ch}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero .fine{margin-top:16px;font-size:13px;color:var(--muted)}
+.hero .shot{border-radius:18px;overflow:hidden;background:var(--cream2)}
+.hero .shot img{width:100%;height:500px;object-fit:cover}
+@media(max-width:980px){.hero{padding:18px 0 26px}.hero .grid{grid-template-columns:1fr;gap:20px}.hero .shot img{height:300px;object-position:50% 18%}.hero .cta .btn{flex:1 1 auto}}
+
+.creds{background:var(--navy);color:#fff;padding:22px 0}
+.creds .wrap{display:flex;gap:26px;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:12.5px;letter-spacing:.04em}
+.creds span{color:rgba(255,255,255,.78)}
+.creds b{color:#fff;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:11.5px}
+
+section{padding:66px 0}
+.lead{max-width:62ch}
+.lead h2{margin-top:12px}
+.lead p{margin-top:12px;color:var(--soft)}
+
+.treat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.t{border:1px solid var(--line);border-radius:16px;background:#fff;padding:24px 22px}
+.t h3{font-family:var(--serif);font-size:19.5px;font-weight:400;margin-bottom:8px}
+.t p{font-size:14.5px;color:var(--soft)}
+.t .more{display:inline-block;margin-top:12px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);font-weight:700}
+@media(max-width:980px){.treat{grid-template-columns:1fr;gap:10px}}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.split .pics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.split .pics img{width:100%;height:230px;object-fit:cover;border-radius:14px}
+@media(max-width:980px){.split{grid-template-columns:1fr;gap:26px}.split .pics img{height:160px}}
+.pics.three{grid-template-columns:1fr 1fr 1fr}
+.pics.three img{height:180px}
+@media(max-width:980px){.pics.three{grid-template-columns:1fr 1fr}.pics.three img{height:140px}}
+.band{margin:26px 0 0;border-radius:16px;overflow:hidden;position:relative}
+.band img{width:100%;height:280px;object-fit:cover}
+.band figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 18px;font-size:12.5px;letter-spacing:.04em;color:#fff;background:linear-gradient(transparent,rgba(11,35,56,.72))}
+@media(max-width:980px){.band img{height:170px}}
+.tourism-shot{width:100%;height:260px;object-fit:cover;border-radius:16px;margin-top:26px}
+@media(max-width:980px){.tourism-shot{height:170px}}
+
+.implant{background:var(--deep);color:#fff}
+.implant h2{color:#fff}
+.implant p{color:rgba(255,255,255,.8)}
+.implant ul{margin:18px 0 0;padding-left:18px;color:rgba(255,255,255,.8);font-size:15px}
+.implant li{margin-bottom:8px}
+.implant .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.implant-facts{display:grid;gap:14px}
+.implant-facts div{border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
+.implant-facts span{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.implant-facts b{display:block;margin-top:6px;font-family:var(--serif);font-weight:400;font-size:22px;color:#fff}
+@media(max-width:980px){.implant .grid{grid-template-columns:1fr}}
+
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px}
+.doc{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.doc{background:#fff}.doc img{width:100%;height:260px;object-fit:cover;object-position:50% 22%;filter:saturate(.92) contrast(1.02) brightness(1.02)}
+.doc .body{padding:16px 18px 18px}
+.doc b{font-family:var(--serif);font-weight:400;font-size:18px;display:block}
+.doc span{display:block;margin-top:4px;font-size:12.5px;color:var(--navy);font-weight:700;letter-spacing:.04em}
+.doc em{display:block;margin-top:6px;font-style:normal;font-size:12.5px;color:var(--muted);line-height:1.45}
+@media(max-width:980px){.docs{grid-template-columns:1fr 1fr;gap:10px}.doc img{height:180px;object-position:50% 18%}}
+.book .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:start}
+.book-left{display:flex;flex-direction:column;gap:26px}
+.book-aside ol{margin:12px 0 0;padding-left:18px;color:var(--soft);font-size:15px}
+.book-aside li{margin-bottom:10px}
+.book-note{margin-top:16px;font-size:13px;color:var(--muted)}
+@media(max-width:980px){.book .grid{grid-template-columns:1fr;gap:26px}}
+
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.q p{font-size:15.5px;color:var(--soft)}
+.q b{display:block;margin-top:14px;font-family:var(--serif);font-weight:400;font-size:16px}
+.q span{display:block;font-size:12.5px;color:var(--muted)}
+@media(max-width:980px){.quotes{grid-template-columns:1fr}}
+
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.visit dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin:20px 0 0;font-size:15.5px}
+.visit dt{color:var(--muted)}
+.visit dd{margin:0}
+.map{border-radius:16px;border:1px solid var(--line);background:var(--cream2);min-height:260px;display:grid;place-items:center;color:var(--muted);font-size:14px}
+@media(max-width:980px){.visit{grid-template-columns:1fr;gap:24px}}
+
+[hidden]{display:none!important}
+section{scroll-margin-top:88px}
+
+/* booking */
+.book{background:var(--cream2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 0}
+.book .grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:44px;align-items:start}
+.book h2{margin-top:10px;max-width:14ch}
+.book .intro p{margin-top:14px;color:var(--soft);max-width:40ch}
+.book .call{margin-top:18px;font-size:15px;color:var(--soft)}
+.book .call a{color:var(--navy);font-weight:700;border-bottom:1px solid rgba(18,52,91,.35)}
+.book .hours{margin-top:8px;font-size:13px;color:var(--muted)}
+.formcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--soft);margin-bottom:6px}
+.field input,.field select,.field textarea{display:block;width:100%;font-family:var(--sans);font-size:16px;line-height:1.4;color:var(--ink);background:#FCFAF6;border:1px solid rgba(14,27,38,.18);border-radius:10px;padding:13px 14px;min-height:50px}
+.field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23465663' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
+.field textarea{min-height:98px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--navy);outline-offset:1px;border-color:var(--navy)}
+.field input::placeholder,.field textarea::placeholder{color:#9AA6AE}
+.field .err{display:none;font-size:12.5px;line-height:1.4;color:#9B2C2C;margin-top:5px}
+.field.bad .err{display:block}
+.field.bad input,.field.bad select,.field.bad textarea{border-color:#9B2C2C;background:#FDF7F5}
+.formcard .btn{width:100%;min-height:52px;font-size:15px;margin-top:2px;border:0;cursor:pointer;font-family:var(--sans)}
+.formnote{margin-top:10px;font-size:12.5px;color:var(--muted);text-align:center}
+.confirm{padding:30px 6px;text-align:center}
+.confirm .mark{width:46px;height:46px;border-radius:50%;background:var(--cream2);color:var(--navy);display:grid;place-items:center;margin:0 auto 16px;font-size:20px}
+.confirm h3{font-family:var(--serif);font-size:27px;font-weight:400;letter-spacing:-.01em}
+.confirm p{margin-top:10px;color:var(--soft);font-size:15px}
+.confirm .num{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 20px;margin-top:10px;font-size:19px;font-weight:700;color:var(--navy);background:var(--cream2);border-radius:999px}
+@media(max-width:980px){
+  .book{padding:40px 0}
+  .book .grid{grid-template-columns:1fr;gap:22px}
+  .book h2{max-width:none}
+  .formcard{padding:18px;border-radius:14px}
+  .frow{grid-template-columns:1fr;gap:0}
+  .field input,.field select,.field textarea{font-size:16px;min-height:52px}
+  .field textarea{min-height:110px}
+  .field label{font-size:12px}
+  .formcard .btn{min-height:54px}
+}
+
+/* new patient special */
+.npscard{display:grid;grid-template-columns:1.3fr .7fr;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:28px}
+.npsbody{padding:38px 40px 36px}
+.npsbody h3{font-family:var(--serif);font-size:27px;font-weight:400;letter-spacing:-.01em}
+.npsbody p{margin-top:10px;color:var(--soft);font-size:15.5px;max-width:52ch}
+.inc{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:9px 20px}
+.inc li{font-size:14.5px;color:var(--soft);padding-left:20px;position:relative}
+.inc li:before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--navy);opacity:.6}
+.npsprice{background:var(--navy);color:#fff;padding:36px 30px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.npsprice .eyebrow{color:rgba(255,255,255,.6)}
+.npsprice .amount{font-family:var(--serif);font-size:46px;line-height:1;margin-top:12px;letter-spacing:-.02em}
+.npsprice .amount small{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-top:10px;color:rgba(255,255,255,.7)}
+.npsprice .btn{margin-top:24px;background:var(--cream);color:var(--ink);width:100%}
+.npsfoot{padding:14px 40px 20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);grid-column:1/-1;background:#FCFAF6}
+@media(max-width:980px){.npscard{grid-template-columns:1fr;border-radius:16px}.npsbody{padding:24px 20px}.npsprice{padding:24px 20px}.npsprice .amount{font-size:40px}.inc{grid-template-columns:1fr}.npsfoot{padding:12px 20px 16px}}
+
+/* payment and panels */
+.pay .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:30px;align-items:start}
+.pblock{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 26px}
+.pblock h3{font-family:var(--serif);font-size:23px;font-weight:400;margin-bottom:6px}
+.pblock .sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.planrow{padding:15px 0;border-top:1px solid var(--line)}
+.planrow:first-of-type{border-top:0;padding-top:0}
+.planrow b{display:block;font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.planrow p{font-size:14px;line-height:1.55;color:var(--soft)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.chip{font-size:12px;line-height:1.2;border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:var(--soft);background:var(--cream)}
+.pblock .fine{margin-top:16px;font-size:12.5px;color:var(--muted)}
+@media(max-width:980px){.pay .grid{grid-template-columns:1fr;gap:12px}.pblock{padding:22px 20px}}
+
+/* health tourism */
+.tourism{background:var(--deep);color:#fff}
+.tourism h2{color:#fff}
+.tourism p{color:rgba(255,255,255,.8)}
+.tourism .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
+.tourism .pull{font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.35;color:#fff;margin-top:24px;max-width:28ch}
+.tourism .facts{border-top:1px solid rgba(255,255,255,.22)}
+.fact{padding:17px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.fact b{display:block;font-family:var(--serif);font-weight:400;font-size:19px;color:#fff}
+.fact span{display:block;margin-top:3px;font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.65)}
+@media(max-width:980px){.tourism .grid{grid-template-columns:1fr;gap:26px}.tourism .pull{font-size:20px}}
+
+/* smile gallery */
+.pairs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.pair{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.pair .imgs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.pair figure{margin:0;position:relative;background:var(--cream2)}
+.pair img{width:100%;height:auto;display:block}
+.pair .tag{position:absolute;left:7px;bottom:7px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;background:rgba(11,35,56,.82);color:#fff;border-radius:4px;padding:3px 6px}
+.pair .cap{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:12px 14px}
+.pair .cap b{font-family:var(--serif);font-weight:400;font-size:16.5px}
+.pair .cap span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.gallerynote{margin-top:14px;font-size:12px;color:var(--muted)}
+@media(max-width:980px){.pairs{grid-template-columns:1fr}.pair img{height:auto}}
+
+.close{background:var(--navy);color:#fff;padding:54px 0}
+.close h2{color:#fff;max-width:26ch}
+.close .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+footer{padding:28px 0 40px;font-size:12.5px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.dock{display:none}
+@media(max-width:980px){
+  .dock{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(11,35,56,.96)}
+  .dock .btn{flex:1}
+  body{padding-bottom:78px}
+  section{padding:46px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr"><div class="wrap">
+  <a href="#top"><img src="assets/logo.png" alt="Dentalpro Dental Specialist Centre"></a>
+  <nav><a href="#book">Appointments</a><a href="#treatments">Treatments</a><a href="#implant">Implant Centre</a><a href="#payment">Payment</a><a href="#dentists">Our dentists</a><a href="#clinic">The centre</a><a href="#contact">Contact</a></nav>
+  <a class="tel" href="tel:+60320943333">+603 2094 3333</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap"><div class="grid">
+  <div>
+    <p class="eyebrow">One-stop dental centre · Damansara Heights, Kuala Lumpur</p>
+    <h1>A centre of excellence in restorative and aesthetic dentistry.</h1>
+    <p class="lede">Dentalpro is a dental specialist centre in Kuala Lumpur, established in 2003. With patient comfort at the top of our list, our concept provides the right atmosphere to alleviate the anxiety commonly associated with a visit to the dentist.</p>
+    <div class="cta">
+      <a class="btn btn-navy" href="#book">Request an appointment</a>
+      <a class="btn btn-line" href="#treatments">See treatments</a>
+    </div>
+    <p class="fine">Mon to Sat, 9:00am – 6:00pm · 12, Jalan Sri Semantan 1, Damansara Heights</p>
+  </div>
+  <div class="shot"><img src="assets/dr-praveen-2022.jpg" alt="Dr Praveen Gill at Dentalpro"></div>
+</div></div></section>
+
+<div class="creds"><div class="wrap">
+  <span><b>Established</b> 2003</span>
+  <span><b>Six dentists</b> including four specialists</span>
+  <span><b>MSQH</b></span>
+  <span><b>The Brand Laureate</b></span>
+  <span><b>Trusted Malaysia</b> · Best Dental Clinics KL</span>
+</div></div>
+
+<section id="book" class="book"><div class="wrap"><div class="grid">
+  <div class="book-left">
+<div class="intro">
+    <p class="eyebrow">Appointments</p>
+    <h2>Request an appointment.</h2>
+    <p>Tell us who you are and what you need. The clinic will confirm by phone.</p>
+    <p class="call">Prefer to call? <a href="tel:+60320943333">+603 2094 3333</a></p>
+    <p class="hours">Mon to Sat, 9:00am – 6:00pm</p>
+  </div>
+<div class="book-aside">
+    <p class="eyebrow">What happens next</p>
+    <ol>
+      <li>We ring you back the same working day to agree a time.</li>
+      <li>First visit is a consultation; treatment is planned and priced before it starts.</li>
+      <li>If it is urgent, say so in the message and we will find you a slot this week.</li>
+    </ol>
+    <p class="book-note">12, Jalan Sri Semantan 1 · Mon to Sat, 9am–6pm</p>
+  </div>
+  </div>
+  <div class="formcard">
+    <form id="booking-form" novalidate>
+      <div class="frow">
+        <div class="field" data-field="name">
+          <label for="bf-name">Name</label>
+          <input id="bf-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+          <p class="err" id="bf-name-err">Please tell us your name.</p>
+        </div>
+        <div class="field" data-field="phone">
+          <label for="bf-phone">Phone</label>
+          <input id="bf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+60 12 345 6789" required>
+          <p class="err" id="bf-phone-err">Please give us a phone number we can reach you on.</p>
+        </div>
+      </div>
+      <div class="field" data-field="email">
+        <label for="bf-email">Email <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+        <input id="bf-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
+        <p class="err" id="bf-email-err">That email address doesn't look right.</p>
+      </div>
+      <div class="field" data-field="treatment">
+        <label for="bf-treatment">Treatment</label>
+        <select id="bf-treatment" name="treatment" required>
+          <option value="">Choose a treatment</option>
+          <option>General &amp; preventive</option>
+          <option>Restorative dentistry</option>
+          <option>Cosmetic dentistry</option>
+          <option>Orthodontic specialist</option>
+          <option>Oral &amp; maxillofacial surgery</option>
+          <option>Denture &amp; bridge</option>
+          <option>Dental implants</option>
+          <option>Not sure yet</option>
+        </select>
+        <p class="err" id="bf-treatment-err">Please choose a treatment, or “Not sure yet”.</p>
+      </div>
+      <div class="frow">
+        <div class="field" data-field="day">
+          <label for="bf-day">Preferred day</label>
+          <input id="bf-day" name="day" type="text" placeholder="e.g. Saturday morning, or 24 Oct" required>
+          <p class="err" id="bf-day-err">Please choose a day from today onwards.</p>
+        </div>
+        <div class="field" data-field="time">
+          <label for="bf-time">Preferred time</label>
+          <select id="bf-time" name="time" required>
+            <option value="">Choose a time</option>
+            <option>Morning, 9:00am – 12:00pm</option>
+            <option>Afternoon, 12:00pm – 3:00pm</option>
+            <option>Late afternoon, 3:00pm – 6:00pm</option>
+          </select>
+          <p class="err" id="bf-time-err">Please choose a time of day.</p>
+        </div>
+      </div>
+      <div class="field" data-field="message">
+        <label for="bf-message">Message <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+        <textarea id="bf-message" name="message" placeholder="Anything the clinic should know before your visit"></textarea>
+      </div>
+      <button class="btn btn-navy" type="submit">Request an appointment</button>
+      <p class="formnote">The clinic will confirm your appointment by phone.</p>
+    </form>
+    <div class="confirm" id="booking-confirm" role="status" aria-live="polite" hidden>
+      <div class="mark" aria-hidden="true">✓</div>
+      <h3>Thank you, <span id="confirm-name">and welcome</span>.</h3>
+      <p>The clinic will confirm your appointment by phone. If you'd rather speak to someone now, call us.</p>
+      <a class="num" href="tel:+60320943333">+603 2094 3333</a>
+      <p style="font-size:13px;color:var(--muted)">Mon to Sat, 9:00am – 6:00pm</p>
+    </div>
+  </div>
+</div></div></section>
+
+<section id="treatments"><div class="wrap">
+  <div class="lead">
+    <p class="eyebrow">Treatments</p>
+    <h2>One-stop dental centre.</h2>
+    <p>Our one-stop dental centre has the facilities needed for an accurate evaluation of a patient's dental health and requirements. Modern equipment such as CBCT with OPG and periapical X-ray, and intra-oral cameras, are integral to our operations.</p>
+  </div>
+  <div class="treat">
+    <div class="t"><h3>General &amp; preventive</h3><p>Regular dental check-ups and cleaning, the simple routine that prevents serious dental issues throughout your lifetime.</p><a class="more" href="#contact">Book a check-up</a></div>
+    <div class="t"><h3>Restorative dentistry</h3><p>Advanced dentistry that restores the function of missing or damaged teeth, with long-term, stable and durable restorations.</p><a class="more" href="#contact">Enquire</a></div>
+    <div class="t"><h3>Cosmetic dentistry</h3><p>Teeth whitening, bonding, composite and porcelain veneers for uneven, discoloured and crooked teeth.</p><a class="more" href="#contact">Enquire</a></div>
+    <div class="t"><h3>Orthodontic specialist</h3><p>Our orthodontic centre is headed by our specialist orthodontist, Dr Praveen Gill, treating all degrees of malocclusion at almost any age.</p><a class="more" href="#contact">Enquire</a></div>
+    <div class="t"><h3>Oral &amp; maxillofacial surgery</h3><p>Minor oral surgery including impacted wisdom teeth and bone augmentation, performed by an oral surgeon specialist.</p><a class="more" href="#contact">Enquire</a></div>
+    <div class="t"><h3>Denture &amp; bridge</h3><p>Replacing missing teeth with dentures and bridges, planned as part of your overall restorative treatment.</p><a class="more" href="#contact">Enquire</a></div>
+  </div>
+</div></section>
+
+<section id="new-patient"><div class="wrap">
+  <div class="lead">
+    <p class="eyebrow">New patient special</p>
+    <h2>A proper first look, before anything begins.</h2>
+  </div>
+  <div class="npscard">
+    <div class="npsbody">
+      <h3>Dental profiling package</h3>
+      <p>An examination and consultation, an OPG X-ray, scaling and polishing, and Smile Card membership, in one first visit.</p>
+      <ul class="inc">
+        <li>Examination &amp; consultation</li>
+        <li>OPG X-ray</li>
+        <li>Scaling &amp; polishing</li>
+        <li>Smile Card membership</li>
+      </ul>
+      <p style="font-size:13.5px;margin-top:18px">Receive your Smilecard after your appointment and enjoy the benefits and privileges for all your future dental care needs.</p>
+    </div>
+    <div class="npsprice">
+      <p class="eyebrow">New patient</p>
+      <div class="amount">RM 300<small>Dental profiling package</small></div>
+      <a class="btn" href="#book">Request the package</a>
+    </div>
+    <div class="npsfoot">Package details as listed. Ask the clinic to confirm what is included for your visit.</div>
+  </div>
+</div></section>
+
+<section id="clinic"><div class="wrap split">
+  <div>
+    <p class="eyebrow">The centre</p>
+    <h2 style="margin-top:12px">Serenity and the comforts of home.</h2>
+    <p style="margin-top:14px;color:var(--soft)">Relax in the homely surroundings inside and outside our premise, wind down over a book, magazine and a cup of tea before you walk to one of our spacious treatment rooms. Dentalpro's founders captured the essence of a world-class dental facility and inspired the Malaysian dental industry to aim high.</p>
+    <p style="margin-top:12px;color:var(--soft)">Patients travel to us from abroad for treatment and stay for the city between appointments, which is why the setting matters as much as the surgery.</p>
+  </div>
+  <div class="pics three">
+    <img src="assets/garden-v2.jpg" alt="The garden at Dentalpro">
+    <div class="implant-facts">
+      <div><span>Placed by</span><b>The surgeon who plans it</b></div>
+      <div><span>Restored by</span><b>The same centre, no referrals</b></div>
+      <div><span>Imaging</span><b>CBCT with OPG on site</b></div>
+    </div>
+    <img src="assets/hero-v2.jpg" alt="The lounge at Dentalpro">
+  </div>
+</div></section>
+
+<section id="implant" class="implant"><div class="wrap"><div class="grid">
+  <div>
+    <p class="eyebrow" style="color:rgba(255,255,255,.6)">Implant Centre</p>
+    <h2 style="margin-top:12px">A complete implant facility.</h2>
+    <p style="margin-top:14px">Dentalpro's Implant Centre is a complete facility which offers the professional care of a highly qualified and experienced team of specialists. A dental implant is ideal for replacement of teeth lost due to disease, accidents, or even where teeth are congenitally missing.</p>
+    <ul>
+      <li>Natural appearance and function, and the most stable and durable option compared with other methods of tooth replacement</li>
+      <li>Promotes bone growth, and in some cases helps maintain the shape of the face</li>
+      <li>Planned and restored within the same centre, by the specialists who treat you</li>
+    </ul>
+  </div>
+  <div class="implant-facts">
+      <div><span>Placed by</span><b>The surgeon who plans it</b></div>
+      <div><span>Restored by</span><b>The same centre, no referrals</b></div>
+      <div><span>Imaging</span><b>CBCT with OPG on site</b></div>
+    </div>
+</div></div></section>
+
+<section id="payment"><div class="wrap pay">
+  <div class="lead">
+    <p class="eyebrow">Payment &amp; panels</p>
+    <h2>Payment plans and panels.</h2>
+  </div>
+  <div class="grid">
+    <div class="pblock">
+      <h3>Payment plan</h3>
+      <p class="sub">Orthodontic and dental financing</p>
+      <div class="planrow">
+        <b>Orthodontic treatment</b>
+        <p>RM450 pre-treatment charges (examination &amp; consultation, X-ray and sturdy model). Choose 30% or 50% down payment from the package price, and the monthly instalment as low as RM200.</p>
+      </div>
+      <div class="planrow">
+        <b>Dental financing</b>
+        <p>Syariah-compliant medical or dental financing, repaid by direct debit, with no collateral needed. Financing up to 100% of the procedure or treatment cost (maximum RM30,000), over a repayment period of up to 36 months. For KL and Selangor residents only.</p>
+        <p style="margin-top:7px">How to apply: attend a check-up and consultation, obtain a treatment plan and quotation, then submit the application through the link given.</p>
+      </div>
+      <p class="fine">Major currencies accepted: US Dollar (USD), Australian Dollar (AUD), Euro (EUR).</p>
+    </div>
+    <div class="pblock">
+      <h3>Our panel</h3>
+      <p class="sub">Panel dental clinic</p>
+      <p style="font-size:14.5px;color:var(--soft)">Dentalpro is a panel dental clinic for the following organisations:</p>
+      <div class="chips">
+        <span class="chip">Hilton Kuala Lumpur</span>
+        <span class="chip">MBPJ</span>
+        <span class="chip">Yayasan Ihsan Rakyat</span>
+        <span class="chip">PM Care</span>
+        <span class="chip">Mindvalley</span>
+        <span class="chip">Brahim's</span>
+        <span class="chip">Bina Puri</span>
+        <span class="chip">GetDoc</span>
+        <span class="chip">MediLink-Global</span>
+        <span class="chip">Compumed</span>
+        <span class="chip">HealthMetrics</span>
+        <span class="chip">REDALERT</span>
+        <span class="chip">CEM Asia</span>
+        <span class="chip">Absolute Technical Production</span>
+        <span class="chip">mas</span>
+      </div>
+      <p class="fine">For further enquiries, contact Customer Services at <a href="tel:+60320943333" style="color:var(--navy);font-weight:700">+603 2094 3333</a> or <a href="tel:+60192403333" style="color:var(--navy)">+6019 240 3333</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="dentists"><div class="wrap">
+  <div class="lead"><p class="eyebrow">Our dentists</p><h2>The team at Dentalpro.</h2></div>
+  <div class="docs">
+    <div class="doc"><img src="assets/dr-praveen-2022.jpg" alt="Dr Praveen Gill"><div class="body"><b>Dr Praveen Gill</b><span>Resident Orthodontist</span><em>BDS (Mal), MClinDent Orthodontics (London), MOrth (RCS England)</em></div></div>
+    <div class="doc"><img src="assets/dr-syed-2022.jpg" alt="Dr Syed M. Azman"><div class="body"><b>Dr Syed M. Azman</b><span>Senior Resident Dental Surgeon</span><em>BDS (Mal)</em></div></div>
+    <div class="doc"><img src="assets/dr-rama_0.jpg" alt="Dr Rama Krsna Rajandram"><div class="body"><b>Dr Rama Krsna Rajandram</b><span>Oral &amp; Maxillofacial Surgeon</span><em>MBBS (University Malaya), DDS (UKM), MDS (Oral and Maxillofacial Surgery), MFDS (RCS Edinburgh)</em></div></div>
+    <div class="doc"><img src="assets/dr-azlina_0.jpg" alt="Dr Azlina Ismail"><div class="body"><b>Dr Azlina Ismail</b><span>Paediatric Dental Specialist</span><em>BDS (Mal), DDent Paediatric Dentistry (London)</em></div></div>
+    <div class="doc"><img src="assets/drhari-2024.jpg" alt="Dr Harindren Subramaniam"><div class="body"><b>Dr Harindren Subramaniam</b><span>Resident Dental Surgeon</span><em>BDS, University of Northern Sumatera</em></div></div>
+  </div>
+</div></section>
+
+<section id="health-tourism" class="tourism"><div class="wrap"><div class="grid">
+  <div>
+    <p class="eyebrow" style="color:rgba(255,255,255,.6)">Health tourism</p>
+    <h2 style="margin-top:12px">Malaysia, for the treatment and the trip.</h2>
+    <p style="margin-top:14px">Malaysia has long been established as a trusted destination for healthcare travel: high quality services at competitive prices, in an environment conducive to recovery and recuperation. Because most dental procedures do not result in downtime, patients can enjoy the leisure activities of Kuala Lumpur in between treatments.</p>
+    <p style="margin-top:12px">Dentalpro has over 20 years' experience as a provider for dental tourism, and understands the concerns that are unique to travelling patients: treatment accuracy, time frames, logistics, post-treatment care and personal assistance. Our Customer Service team takes you step by step from first contact through treatment, departure and beyond. Complimentary transport to and from the clinic can be arranged when you share your accommodation details.</p>
+    <p class="pull">“Getting that Perfect Smile is a must for your travel itinerary in Malaysia.”</p>
+  </div>
+  <div>
+    <div class="facts">
+      <div class="fact"><b>Before, after, in between</b><span>Your holiday can happen around your dental visits, not instead of them.</span></div>
+      <div class="fact"><b>Over 20 years</b><span>Looking after patients who travel to Kuala Lumpur for their dentistry.</span></div>
+      <div class="fact"><b>To and from the clinic</b><span>Complimentary transport to and from the clinic, arranged from your accommodation details.</span></div>
+      <div class="fact"><b>One team throughout</b><span>Customer Service stays with you from the first enquiry to your safe return home.</span></div>
+    </div>
+  </div>
+</div></div></section>
+
+<section><div class="wrap">
+  <div class="lead"><p class="eyebrow">In their words</p><h2>Patients who have been with us for years.</h2></div>
+  <div class="quotes">
+    <div class="q"><p>“Tq Dr Praveen Gill for all you have done to correct my bite and smile! &amp; Tq recommended me to an awesome surgeon Dr Rama Krsna Rajandram.”</p><b>Shahrene Ain</b><span>Patient</span></div>
+    <div class="q"><p>“I am in love with my new smile… Dr Syed and his team are absolute best. Their professionality is above and beyond.”</p><b>May Issa</b><span>United Kingdom</span></div>
+    <div class="q"><p>“I'm working and living abroad. For the many years that I am away I will be seeing various dentists whether in the country I'm based in, or when I'm on holiday in Malaysia.”</p><b>Chew Wei Leong</b><span>Patient</span></div>
+    <div class="q"><p>“Ms Hofman's first appointment was made on April 3rd, 2004 and since then has undergone numerous treatments to restore her teeth, such as fillings, root canal treatment, and 22 units of crowns.”</p><b>Magriet Hofman</b><span>Patient since 2004</span></div>
+  </div>
+</div></section>
+
+<section id="smiles"><div class="wrap">
+  <div class="lead">
+    <p class="eyebrow">Before &amp; after</p>
+    <h2>The change, in their own photographs.</h2>
+    <p>Teeth whitening, composite veneers and gum contouring, shown in our own clinical images.</p>
+  </div>
+  <div class="pairs">
+    <div class="pair">
+      <div class="imgs">
+        <figure><img src="assets/smile-whitening-before.jpg" alt="Teeth before whitening"><span class="tag">Before</span></figure>
+        <figure><img src="assets/smile-whitening-after.jpg" alt="Teeth after whitening"><span class="tag">After</span></figure>
+      </div>
+      <div class="cap"><b>Teeth whitening</b><span>Cosmetic</span></div>
+    </div>
+    <div class="pair">
+      <div class="imgs">
+        <figure><img src="assets/smile-composite-before.jpg" alt="Teeth before composite veneers"><span class="tag">Before</span></figure>
+        <figure><img src="assets/smile-composite-after.jpg" alt="Teeth after composite veneers"><span class="tag">After</span></figure>
+      </div>
+      <div class="cap"><b>Composite veneer</b><span>Cosmetic</span></div>
+    </div>
+    <div class="pair">
+      <div class="imgs">
+        <figure><img src="assets/smile-gum-before.jpg" alt="Smile before gum contouring"><span class="tag">Before</span></figure>
+        <figure><img src="assets/smile-gum-after.jpg" alt="Smile after gum contouring"><span class="tag">After</span></figure>
+      </div>
+      <div class="cap"><b>Gum contouring</b><span>Cosmetic</span></div>
+    </div>
+  </div>
+  <p class="gallerynote">Individual results vary. These are our own clinical photographs, not a promise of outcome.</p>
+</div></section>
+
+<section id="contact"><div class="wrap visit">
+  <div>
+    <p class="eyebrow">Contact</p>
+    <h2 style="margin-top:12px">Make an appointment.</h2>
+    <p style="margin-top:14px;color:var(--soft)">Call the clinic during opening hours, or send a message and the desk will come back to you with the next available slot.</p>
+    <dl>
+      <dt>Address</dt><dd>12, Jalan Sri Semantan 1,<br>Damansara Heights, 50490 Kuala Lumpur, Malaysia</dd>
+      <dt>Hours</dt><dd>Mon to Sat: 9:00am – 6:00pm<br>Closed Sunday and public holidays</dd>
+      <dt>Phone</dt><dd><a href="tel:+60320943333" style="color:var(--navy);font-weight:700">+603 2094 3333</a></dd>
+      <dt>Email</dt><dd><a href="mailto:thedentist@dentalpro.org" style="color:var(--navy)">thedentist@dentalpro.org</a></dd>
+    </dl>
+  </div>
+  <div class="map">Map · Jalan Sri Semantan 1, Damansara Heights</div>
+</div></section>
+
+<div class="close"><div class="wrap">
+  <p class="eyebrow" style="color:rgba(255,255,255,.6)">Dentalpro · since 2003</p>
+  <h2 style="margin-top:12px">Trust us for all your dental care needs.</h2>
+  <div class="row"><a class="btn btn-cream" href="tel:+60320943333">+603 2094 3333</a><a class="btn" style="border:1px solid rgba(255,255,255,.35);color:#fff" href="mailto:thedentist@dentalpro.org">Email the clinic</a></div>
+</div></div>
+
+<footer><div class="wrap">
+  <span>Dentalpro Dental Specialist Centre · 12, Jalan Sri Semantan 1, Damansara Heights, Kuala Lumpur</span>
+  <span>Private rebuild prepared for Dentalpro · not published, not affiliated</span>
+</div></footer>
+
+<div class="dock"><a class="btn btn-cream" href="tel:+60320943333">Call the clinic</a><a class="btn btn-navy" href="#book">Book</a></div>
+
+<script>
+(function () {
+  var form = document.getElementById('booking-form');
+  if (!form) return;
+
+  var day = document.getElementById('bf-day');
+  var today = new Date();
+  var iso = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+  if (day) day.min = iso;
+
+  function digits(v) { return (v || '').replace(/[^0-9]/g, '').length; }
+  function field(name) { return form.querySelector('[data-field="' + name + '"]'); }
+  function mark(name, bad) {
+    var wrap = field(name);
+    if (wrap) wrap.classList.toggle('bad', bad);
+    return !bad;
+  }
+
+  var checks = {
+    name: function (v) { return v.trim().length >= 2; },
+    phone: function (v) { return digits(v) >= 8 && digits(v) <= 15; },
+    email: function (v) { return v.trim() === '' || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
+    treatment: function (v) { return v !== ''; },
+    day: function (v) { return v !== '' && v >= iso; },
+    time: function (v) { return v !== ''; }
+  };
+
+  Object.keys(checks).forEach(function (name) {
+    var el = form.querySelector('[name="' + name + '"]');
+    if (!el) return;
+    var ev = (el.tagName === 'SELECT' || el.type === 'date') ? 'change' : 'input';
+    el.addEventListener(ev, function () {
+      if (field(name).classList.contains('bad') && checks[name](el.value)) mark(name, false);
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var firstBad = null;
+
+    Object.keys(checks).forEach(function (name) {
+      var el = form.querySelector('[name="' + name + '"]');
+      var ok = el ? checks[name](el.value) : true;
+      mark(name, !ok);
+      if (!ok && !firstBad) firstBad = el;
+    });
+
+    if (firstBad) { firstBad.focus(); return; }
+
+    var name = form.querySelector('[name="name"]').value.trim().split(/\s+/)[0];
+    var confirm = document.getElementById('booking-confirm');
+    document.getElementById('confirm-name').textContent = name || 'and welcome';
+    form.hidden = true;
+    confirm.hidden = false;
+    confirm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+})();
+</script>
+</body></html>
